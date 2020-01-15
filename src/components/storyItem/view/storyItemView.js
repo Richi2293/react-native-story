@@ -9,7 +9,7 @@ import Avatar from "../../avatar/view/avatarView";
 export default class extends PureComponent {
   render() {
     const {
-      story: { source, user, avatar, id },
+      story: { source, user, avatar, id, media_file },
       selectedStory,
       handleSelectedStoryOnLoaded,
       footerComponent
@@ -24,7 +24,9 @@ export default class extends PureComponent {
               handleSelectedStoryOnLoaded()
             }
             style={styles.image}
-            {...{ source }}
+            // {...{ media_file }}
+            source={{uri: media_file}}
+            resizeMode={"contain"}
           />
           <Avatar {...{ user, avatar }} />
         </View>
