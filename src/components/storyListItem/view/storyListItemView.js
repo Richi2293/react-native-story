@@ -51,11 +51,11 @@ class StoryListItemView extends Component {
         >
           <Image
             style={styles.avatar}
-            source={item.avatar}
+            source={{uri: item.avatar}}
             defaultSource={DEFAULT_AVATAR}
           />
         </TouchableOpacity>
-        <Text style={styles.itemText}>{item.user}</Text>
+        <Text style={styles.itemText}>{item.user != null ? item.user : item.name}</Text>
       </View>
     );
   }
